@@ -1,0 +1,13 @@
+name: Hello World
+on: pull_request
+
+jobs:
+  build:
+    runs-on: self-hosted
+    container:
+      image: python:3.11
+    steps:
+    - name: run pytest
+      run: |
+        poetry install
+        pytest
